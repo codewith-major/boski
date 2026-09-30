@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', system-ui, sans-serif;
+
+  /* Brand Colors */
+  --color-boski-ink: #171719;
+  --color-boski-cream: #F6F3EC;
+  --color-boski-lime: #C8F31D;
+
+  /* Semantic Variables */
+  --color-background: var(--color-boski-cream);
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #ECE7DD;
+  --color-text-primary: var(--color-boski-ink);
+  --color-text-secondary: #6B6964;
+  --color-text-muted: #949089;
+  --color-border: #D8D3C7;
+  --color-border-subtle: #E6E2D8;
+  --color-accent: var(--color-boski-lime);
+
+  /* Functional Colors */
+  --color-success: #287A45;
+  --color-warning: #A96500;
+  --color-error: #BA1A1A;
+  --color-info: #356B9A;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary antialiased;
+  }
+
+  /* Typography Scale */
+  h1, .text-display { @apply text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight; }
+  h2, .text-h1 { @apply text-3xl md:text-4xl font-extrabold tracking-tight; }
+  h3, .text-h2 { @apply text-2xl md:text-3xl font-bold tracking-tight; }
+  h4, .text-h3 { @apply text-xl md:text-2xl font-bold tracking-tight; }
+  
+  .text-body { @apply text-base font-medium leading-relaxed; }
+  .text-body-sm { @apply text-sm font-medium leading-relaxed; }
+  .text-label { @apply text-xs font-bold uppercase tracking-wider; }
+  .text-caption { @apply text-xs font-medium text-text-secondary; }
+}
+
+@layer components {
+  /* Grid & Layout Foundations */
+  .boski-container {
+    @apply w-full max-w-[1360px] mx-auto px-5 md:px-8;
+  }
+  
+  .boski-grid {
+    @apply grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-5 lg:gap-6;
+  }
+}
